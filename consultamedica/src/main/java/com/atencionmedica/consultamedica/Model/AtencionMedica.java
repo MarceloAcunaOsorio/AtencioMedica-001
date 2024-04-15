@@ -15,6 +15,7 @@ public class AtencionMedica
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idConsulta")
     private int idconsulta;
   
     @Column(name = "Motivo")

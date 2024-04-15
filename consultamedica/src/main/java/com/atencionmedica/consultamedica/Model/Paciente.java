@@ -41,7 +41,6 @@ public class Paciente
     @Column(name = "Prevision")
     private String prevision;
 
-
     @OneToMany(mappedBy = "paciente",cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
     private List<AtencionMedica> atencionMedica = new ArrayList<>();
 
