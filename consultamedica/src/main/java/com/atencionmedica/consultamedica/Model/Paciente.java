@@ -1,18 +1,25 @@
 package com.atencionmedica.consultamedica.Model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 
 @Entity
-@Table(name = "Paciente")
+@Table(name = "Pacientex")
 public class Paciente 
 {
+    @Valid
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idPaciente")
     private int idPaciente;
 
     @Column(name = "Rut")
@@ -27,7 +34,11 @@ public class Paciente
     @Column(name = "Edad")
     private int edad;
 
-    @Column(name = "idConsulta")
+    @Column(name = "Prevision")
+    private String prevision;
+
+
+    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private AtencionMedica idconsulta;
 
 
@@ -58,10 +69,16 @@ public class Paciente
         return edad;
     }
 
+    public String setPrevision()
+    {
+       return prevision;
+    }
+
     public AtencionMedica getIdConsulta()
     {
         return idconsulta;
     }
+
 
 
 
@@ -89,6 +106,11 @@ public class Paciente
     public void setEdad(int edad)
     {
         this.edad = edad;
+    }
+
+    public void setPrevision(String prevision)
+    {
+        this.prevision = prevision;
     }
 
     public void setIdConsulta(AtencionMedica idconsulta)
