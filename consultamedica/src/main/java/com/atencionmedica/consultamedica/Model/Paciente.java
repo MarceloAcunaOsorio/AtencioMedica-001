@@ -7,9 +7,13 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
+
+import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "Pacientex")
@@ -38,8 +42,8 @@ public class Paciente
     private String prevision;
 
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private AtencionMedica idconsulta;
+    @OneToMany(mappedBy = "paciente",cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
+    private List<AtencionMedica> atencionMedica = new ArrayList<>();
 
 
 
@@ -74,10 +78,6 @@ public class Paciente
        return prevision;
     }
 
-    public AtencionMedica getIdConsulta()
-    {
-        return idconsulta;
-    }
 
 
 
@@ -113,9 +113,6 @@ public class Paciente
         this.prevision = prevision;
     }
 
-    public void setIdConsulta(AtencionMedica idconsulta)
-    {
-        this.idconsulta = idconsulta;
-    }
+
 
 }
