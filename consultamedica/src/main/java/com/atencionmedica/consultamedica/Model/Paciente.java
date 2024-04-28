@@ -1,21 +1,13 @@
 package com.atencionmedica.consultamedica.Model;
 
-import jakarta.persistence.CascadeType;
-//import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-//import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-//import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.Valid;
 
-//import java.util.List;
-//import java.util.ArrayList;
 
 @Entity
 @Table(name = "Pacientex")
@@ -43,8 +35,8 @@ public class Paciente
     @Column(name = "Prevision")
     private String prevision;
 
-    @ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private AtencionMedica consulta;
+    //@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //private AtencionMedica consulta;
 
     //@OneToMany(mappedBy = "paciente",cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
     //private List<AtencionMedica> atencionMedica = new ArrayList<>();
@@ -82,11 +74,6 @@ public class Paciente
        return prevision;
     }
 
-    public AtencionMedica getconsulta()
-    {
-        return consulta;
-    }
-
 
 
 
@@ -121,12 +108,5 @@ public class Paciente
     {
         this.prevision = prevision;
     }
-
-    public void setConsulta(AtencionMedica consulta)
-    {
-        this.consulta = consulta;
-    }
-
-
 
 }
