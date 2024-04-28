@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.slf4j.Logger;
-
 import com.atencionmedica.consultamedica.Model.Paciente;
 import com.atencionmedica.consultamedica.Service.PacienteService;
 
@@ -38,8 +37,6 @@ public class PacienteController
          log.info("Retornando Todos los usuarios");  
          return pacienteservice.getAllUsuarios();
      }
-
-
 
     //buscar paciente
     @GetMapping("/{idPaciente}")
