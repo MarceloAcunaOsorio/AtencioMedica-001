@@ -35,6 +35,17 @@ public class Paciente
     @Column(name = "Prevision")
     private String prevision;
 
+    @Column(name = "MotivoConsulta")
+    private String motivo_Consulta;
+
+
+    @Column(name = "Diagnostico")
+    private String diagnostico;
+
+
+    @Column(name = "Observacion")
+    private String observacion;
+
     //@ManyToOne(optional = false, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     //private AtencionMedica consulta;
 
@@ -69,9 +80,24 @@ public class Paciente
         return edad;
     }
 
-    public String setPrevision()
+    public String getPrevision()
     {
        return prevision;
+    }
+
+    public String getDiagnostico()
+    {
+        return diagnostico;
+    }
+
+    public String getMotivoConsulta()
+    {
+        return motivo_Consulta;
+    }
+
+    public String getObservacion()
+    {
+        return observacion;
     }
 
 
@@ -107,6 +133,21 @@ public class Paciente
     public void setPrevision(String prevision)
     {
         this.prevision = prevision;
+    }
+
+    public void setMotivoConsulta(String Motivo_Consulta)
+    {
+        this.motivo_Consulta = Motivo_Consulta;
+    }
+
+    public void setObservacion(String observacion)
+    {
+       this.observacion = observacion;
+    }
+
+    public void setDiagnostico(String diagnostico)
+    {
+        this.diagnostico = diagnostico;
     }
 
 }
