@@ -1,5 +1,7 @@
 package com.atencionmedica.consultamedica.Model;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +13,7 @@ import jakarta.validation.Valid;
 
 @Entity
 @Table(name = "Pacientex")
-public class Paciente 
+public class Paciente extends RepresentationModel<Paciente>
 {
     @Valid
 
