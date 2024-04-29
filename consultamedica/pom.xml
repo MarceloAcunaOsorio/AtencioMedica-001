@@ -56,6 +56,12 @@
             <artifactId>hibernate-validator</artifactId> 
             <version>8.0.0.Final</version>
         </dependency>
+         <dependency>
+        	<groupId>com.oracle.database.jdbc</groupId>
+        	<artifactId>ojdbc11-production</artifactId>
+        	<version>21.5.0.0</version>
+        	<type>POM</type>
+    	</dependency>
 		 <dependency>
         	<groupId>com.oracle.database.security</groupId>
         	<artifactId>oraclepki</artifactId>
