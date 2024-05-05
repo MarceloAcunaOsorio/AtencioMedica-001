@@ -10,4 +10,4 @@ COPY Wallet_S2EAZR8T9KFHQM3E /app/oracle_wallet/
 #Puerto
 EXPOSE 8080
 
-CMD ["java", "-jar", "app.jar"]
+CMD [ "java", "-jar", "app.jar" ]
